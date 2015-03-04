@@ -2,12 +2,25 @@
 
 class adminController extends userController {
 
+    public function __construct() {
+        if (!$this->checkUserAuth()) {
+            //TODO - redirect to start page
+        }
+    }
+
     public function indexAction() {
 
         if ($this->checkAdminAuth()) {
             //TODO - Get admin view, active users, active departments, deactivated users, deactivated departments
         }
     }
+
+
+    //Display functions
+    public function displayAdmin() {
+        //TODO - require admin.php
+    }
+
 
     //Create functions
     public function createDepAction() {

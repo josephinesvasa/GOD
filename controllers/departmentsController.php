@@ -2,6 +2,12 @@
 
 class departmentsController extends baseController {
 
+    public function __construct() {
+        if (!$this->checkUserAuth()) {
+            //TODO - redirect to start page
+        }
+    }
+
     public function indexAction() {
 
         if ($this->checkUserAuth()) {
@@ -30,7 +36,20 @@ class departmentsController extends baseController {
 
     //Display functions
     public function displayDepNotification() {
-        //TODO - Display notification to admins if there is an unanswered message in the department
+
+        if ($this->checkUserAuth()) {
+
+            if ($this->checkUserDep($_SESSION['user_id'])) {
+                //TODO - Display notification to admins if there is an unanswered message in the department
+            }
+        }
+    }
+
+    public function displayDep() {
+
+        if ($this->checkUserAuth()) {
+            //TODO - Display department.php
+        }
     }
 
 

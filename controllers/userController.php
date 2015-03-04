@@ -1,13 +1,21 @@
 <?php
 
 class userController extends baseController {
+
+    public function __construct() {
+        if (!$this->checkUserAuth()) {
+            //TODO - Redirect to start page
+        }
+    }
+
+
     public function logIn() {
         //TODO - make login
     }
 
     public function logOut() {
         session_destroy();
-        header( 'location: arbetsochprojektmetodik/lorenum/router.php' );
+        header( 'location: PHP/GOD/router.php' );
     }
 
 
@@ -31,19 +39,21 @@ class userController extends baseController {
     public function getUser() {
 
         if ($this->checkUserAuth()) {
-
+            //TODO - Get a user from db
         }
-        //TODO - Get user from db
     }
 
     public function getRoomsAction() {
 
         if ($this->checkUserAuth()) {
-            //TODO -
+            //TODO - get all rooms that a user belongs to
         }
     }
 
-    public function getUserSettings() {
+    public function getUserSettingsAction() {
 
+        if ($this->checkUserAuth()) {
+            //TODO - Get a users settings
+        }
     }
 }
