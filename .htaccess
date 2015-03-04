@@ -1,0 +1,7 @@
+DirectoryIndex router.php
+
+Options -Indexes
+
+RewriteEngine On
+
+RewriteRule ^(.*) router.php

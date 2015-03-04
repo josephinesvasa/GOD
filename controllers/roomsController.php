@@ -1,0 +1,84 @@
+<?php
+
+class RoomController extends baseController {
+    public function indexAction() {
+        if ($this->checkUserAuth()) {
+            //TODO - view room.php AND get room messages AND room users
+        }
+    }
+
+    //Create functions
+    public function create() {
+        //TODO - Create a room (get room name and users to add to the room from POST)
+    }
+
+    public function createMessageAction() {
+        //TODO - Create a message (get info from post)
+    }
+
+
+    //Update functions
+    public function updateNameAction() {
+        //TODO - Edit room name (get room id from post)
+    }
+
+
+    //Delete functions
+    public function deleteRoomAction() {
+        //TODO - Delete a room (get room from post)
+    }
+
+    public function deleteMessageAction() {
+        //TODO - Delete one of my own messages
+    }
+
+
+    //Remove functions
+    public function removeRoomNotification() {
+        //TODO - Remove a notification from the current user when it clicks on the notified Room
+    }
+
+    public function removeUserAction() {
+        //TODO - Remove a user from the room (get user id and room id from post)
+    }
+
+
+    //Add functions
+    public function addUsersAction() {
+        //TODO - add a user to a room (get user id and room id from POST)
+    }
+
+
+    //Get functions
+    public function getUsers($room) {
+        //TODO - Get all users in a room if the room is public (get room id from GET)
+    }
+
+    public function getMessages($room) {
+        //TODO - Get all messages that belong to a room (get room id from GET)
+    }
+
+    public function getMessagesAction($room) {
+        //TODO - Get all messages from a room (get room id from GET)
+    }
+
+
+    //Display functions
+    public function displayRoomNotification() {
+        //TODO - Display notifications to users who don't have the current room as main window
+    }
+
+
+    //Check functions
+    public function checkIfRoomExist($user) {
+        //TODO - Check if the room the user wants to go to exist
+    }
+
+    public function checkIfUserExist($user) {
+        //TODO - Check if a user exist
+    }
+
+    public function checkMessageOwner($msg) {
+        //TODO - Check if the owner of the messages is the current user or not (get message id from POST)
+    }
+}
