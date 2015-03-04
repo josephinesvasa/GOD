@@ -1,79 +1,74 @@
 <?php
-session_start();
 
-require_once('./controllers/userController.php');
-require_once('./controllers/adminController.php');
-require_once('./controllers/roomController.php');
-require_once('./controllers/messageController.php');
+class Router {
 
-$uri = explode('/', parse_url(strtolower(rtrim($_SERVER['REQUEST_URI'], '/')), PHP_URL_PATH));
-$script = explode('/', parse_url(strtolower(rtrim($_SERVER['SCRIPT_NAME'], '/')), PHP_URL_PATH));
+    private $controller = 'startController';
+    private $action = 'indexAction';
 
-for ($i = 0; $i < count($script); $i++) {
-    if (isset($uri[$i]) && $uri[$i] == $script[$i]) {
-        unset($uri[$i]);
-    }
-}
+    private $path;
+    private $uri;
+    private $script;
 
-$path = array_values($uri);
+    public function __construct() {
+        $this->uri = explode(DIRECTORY_SEPARATOR, parse_url(strtolower(rtrim($_SERVER['REQUEST_URI'], DIRECTORY_SEPARATOR)), PHP_URL_PATH));
+        $this->script = explode(DIRECTORY_SEPARATOR, parse_url(strtolower(rtrim($_SERVER['SCRIPT_NAME'], DIRECTORY_SEPARATOR)), PHP_URL_PATH));
 
-if (empty($_SESSION['status'])) {
-    echo 'SHOW LOGIN PAGE!';
-}
-else {
-    if (count($path) == 0) {
-        echo 'Include chat.php';
-    }
-    elseif (count($path) == 1) {
-        if ($path[0] == 'settings') {
-            echo 'Include settings.php';
+        $this->getPath();
+        if (count($this->path) <= 2) {
+            $this->checkExistence();
         }
-        elseif ($path[0] == 'admin') {
-            if (!empty($_SESSION['admin'])) {
-                echo 'Include admin.php';
+        else {
+            echo 'TO MANY PARAMETERS!';
+        }
+    }
+
+    public function getPath() {
+
+        for ($i = 0; $i < count($this->script); $i++) {
+            if (isset($this->uri[$i]) && $this->uri[$i] == $this->script[$i]) {
+                unset($this->uri[$i]);
+            }
+        }
+
+        $this->path = array_values($this->uri);
+    }
+
+    public function checkExistence() {
+        $controller = $this->controller;
+        $action = $this->action;
+
+        if (!empty($this->path[0])) {
+            $controller = $this->path[0] . 'Controller';
+
+            if (!empty($this->path[1])) {
+                $action = $this->path[1] . 'Action';
+            }
+        }
+
+        if (is_readable('./controllers/' . $controller . '.php')) {
+            $this->controller = $controller;
+
+            if (method_exists($controller, $action)) {
+                $this->action = $action;
             }
             else {
-                echo 'ERROR 404!';
+                $this->redirectToIndex();
             }
         }
         else {
-            echo 'ERROR 404!';
+            $this->redirectToIndex();
         }
     }
-    else {
-        echo 'ERROR 404!';
+
+    public function getController() {
+        return $this->controller;
+    }
+
+    public function getAction() {
+        return $this->action;
+    }
+
+    public function redirectToIndex() {
+        header('location:/PHP/GOD');
     }
 }
-
-
-/*
-if (count($uri) == 4) {
-    echo 'You are at the home page!';
-}
-elseif (count($uri) == 5) {
-
-    if (is_readable($contPath . $uri[4] . $contExt)) {
-        echo 'Please specify a function!';
-    }
-    else {
-        echo 'Page does not exist';
-    }
-}
-elseif (count($uri) == 6) {
-
-    if (is_readable($contPath . $uri[4] . $contExt)) {
-
-        if (method_exists($uri[4], $uri[5])) {
-            $obj = new $uri[4]();
-            $obj->$uri[5]();
-        }
-        else {
-            echo 'Function does not exist!';
-        }
-    }
-    else {
-        echo 'Page does not exist, try another one!';
-    }
-}
-*/
-?>

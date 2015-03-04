@@ -1,16 +1,17 @@
 <?php
 
-class RoomController extends baseController {
+class RoomsController extends BaseController {
 
     public function __construct() {
         if (!$this->checkUserAuth()) {
-            //TODO - redirect to start page
+            header('location:/PHP/GOD');
         }
     }
 
 
     public function indexAction() {
         //TODO - view room.php AND get room messages AND room users
+        echo 'View room.php AND get room messages AND room users';
     }
 
     //Create functions

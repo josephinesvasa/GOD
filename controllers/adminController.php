@@ -1,10 +1,10 @@
 <?php
 
-class adminController extends userController {
+class AdminController extends UserController {
 
     public function __construct() {
-        if (!$this->checkUserAuth()) {
-            //TODO - redirect to start page
+        if (!$this->checkAdminAuth()) {
+            header('location:/PHP/GOD');
         }
     }
 
@@ -12,6 +12,7 @@ class adminController extends userController {
 
         if ($this->checkAdminAuth()) {
             //TODO - Get admin view, active users, active departments, deactivated users, deactivated departments
+            echo 'Get admin view, active users, active departments, deactivated users, deactivated departments';
         }
     }
 
