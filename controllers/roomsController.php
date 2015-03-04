@@ -10,46 +10,32 @@ class RoomController extends baseController {
 
 
     public function indexAction() {
-        if ($this->checkUserAuth()) {
-            //TODO - view room.php AND get room messages AND room users
-        }
+        //TODO - view room.php AND get room messages AND room users
     }
 
     //Create functions
     public function create() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Create a room (get room name and users to add to the room from POST)
-        }
+        //TODO - Create a room (get room name and users to add to the room from POST)
     }
 
     public function createMessageAction() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Create a message (get info from post)
-        }
+        //TODO - Create a message (get info from post)
     }
 
 
     //Update functions
     public function updateNameAction() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Edit room name (get room id from post)
-        }
+        //TODO - Edit room name (get room id from post)
     }
 
 
     //Delete functions
     public function deleteRoom() {
-            //TODO - Delete a room (get room from post)
+        //TODO - Delete a room (get room from post)
     }
 
     public function deleteMessageAction() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Delete one of my own messages
-        }
+        //TODO - Delete one of my own messages
     }
 
 
@@ -85,17 +71,11 @@ class RoomController extends baseController {
 
     //Leave/hide function
     public function leaveGroupRoomAction() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Remove the user from the room AND check if the user is alone in the room (if true, remove the room)
-        }
+        //TODO - Remove the user from the room AND check if the user is alone in the room (if true, remove the room)
     }
 
     public function hidePrivateRoomAction() {
-
-        if ($this->checkUserAuth()) {
-
-        }
+        //TODO - Hide a private room
     }
 
 
@@ -107,17 +87,11 @@ class RoomController extends baseController {
 
     //Display functions
     public function displayRoomNotification() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Display notifications to users who don't have the current room as main window
-        }
+        //TODO - Display notifications to users who don't have the current room as main window
     }
 
     public function displayRoom() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Display room.php
-        }
+        //TODO - Display room.php
     }
 
 

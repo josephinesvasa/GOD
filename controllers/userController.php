@@ -21,39 +21,24 @@ class userController extends baseController {
 
     //Update functions
     public function updateName() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Update current users name
-        }
+        //TODO - Update current users name
     }
 
     public function updateImage() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Update current users profile image
-        }
+        //TODO - Update current users profile image
     }
 
 
     //Get functions
     public function getUser() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Get a user from db
-        }
+        //TODO - Get a user from db
     }
 
     public function getRoomsAction() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - get all rooms that a user belongs to
-        }
+        //TODO - get all rooms that a user belongs to
     }
 
     public function getUserSettingsAction() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Get a users settings
-        }
+        //TODO - Get a users settings
     }
 }

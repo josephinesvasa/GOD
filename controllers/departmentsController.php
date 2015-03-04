@@ -9,10 +9,7 @@ class departmentsController extends baseController {
     }
 
     public function indexAction() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Show department view and get unanswered querys/replys, answered querys/replys, department admins, department visitors
-        }
+        //TODO - Show department view and get unanswered querys/replys, answered querys/replys, department admins, department visitors
     }
 
 
@@ -36,43 +33,27 @@ class departmentsController extends baseController {
 
     //Display functions
     public function displayDepNotification() {
-
-        if ($this->checkUserAuth()) {
-
-            if ($this->checkUserDep($_SESSION['user_id'])) {
-                //TODO - Display notification to admins if there is an unanswered message in the department
-            }
+        if ($this->checkUserDep($_SESSION['user_id'])) {
+            //TODO - Display notification to admins if there is an unanswered message in the department
         }
     }
 
     public function displayDep() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Display department.php
-        }
+        //TODO - Display department.php
     }
 
 
     //Create functions
     public function createDepAction() {
-
-        if ($this->checkAdminAuth()) {
-            //TODO - Create a department (get department id from POST)
-        }
+        //TODO - Create a department (get department id from POST)
     }
 
     public function createQueryAction() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Create a query (get values from POST)
-        }
+        //TODO - Create a query (get values from POST)
     }
 
     public function createReplyAction() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Check if the user that tries to reply are included in the department and create a reply (get values from POST)
-        }
+        //TODO - Check if the user that tries to reply are included in the department and create a reply (get values from POST)
     }
 
 
@@ -85,17 +66,11 @@ class departmentsController extends baseController {
     }
 
     public function deleteQueryAction() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Check if the user are included in the department or the query owner, delete the query from the db (get query id from POST)
-        }
+        //TODO - Check if the user are included in the department or the query owner, delete the query from the db (get query id from POST)
     }
 
     public function deleteReplyAction() {
-
-        if ($this->checkUserAuth()) {
-            //TODO - Check if the user are included in the department, delete the reply from the db (get query id from POST)
-        }
+        //TODO - Check if the user are included in the department, delete the reply from the db (get query id from POST)
     }
 
 

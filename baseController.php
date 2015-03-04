@@ -1,6 +1,6 @@
 <?php
 
-class baseController {
+abstract class baseController {
 
     public function connect_db() {
         //TODO - connect to DATA BASE
