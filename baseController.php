@@ -1,22 +1,24 @@
 <?php
-<<<<<<< HEAD
 //test
 abstract class BaseController {
-=======
-
-abstract class baseController {
-    protected  $db = PDO("mysql:host=localhost;dbname=sonet_db;charset=utf8", "root", "");
->>>>>>> origin/master
 
     public function connect_db() {
         //TODO - connect to DATA BASE
     }
 
     public function checkUserAuth() {
-        //TODO - Check if the user has SESSION status "online"
+        if (isset($_SESSION['auth'])) {
+            if ($_SESSION['auth'] === 'user' || 'admin') {
+                return true;
+            }
+        }
     }
 
     public function checkAdminAuth() {
-        //TODO - check if the user has SESSION admin "1"
+        if (isset($_SESSION['auth'])) {
+            if ($_SESSION['auth'] === 'admin') {
+                return true;
+            }
+        }
     }
 }
