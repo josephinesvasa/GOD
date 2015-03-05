@@ -1,6 +1,7 @@
 <?php
 
 abstract class baseController {
+    protected  $db = PDO("mysql:host=localhost;dbname=sonet_db;charset=utf8", "root", "");
 
     public function connect_db() {
         //TODO - connect to DATA BASE

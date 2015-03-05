@@ -57,15 +57,15 @@ class RoomController extends baseController {
 
     //Get functions
     public function getUsers($room) {
+        $stm = $this->$db->prepare("
+        SELECT f_name, l_name FROM users AS u
+        JOIN rooms_users AS ru ON ru.user_id = u.user_id
+        WHERE ru.room_id = :room");
         //TODO - Get all users in a room if the room is public (get room id from GET)
     }
 
     public function getMessages($room) {
         //TODO - Get all messages that belong to a room (get room id from GET)
-    }
-
-    public function getMessagesAction($room) {
-        //TODO - Get all messages from a room (get room id from GET)
     }
 
 
