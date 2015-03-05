@@ -1,10 +1,15 @@
 <?php
+<<<<<<< HEAD
 //test
 class UserController extends BaseController {
+=======
+
+class userController extends baseController {
+>>>>>>> origin/master
 
     public function __construct() {
         if (!$this->checkUserAuth()) {
-            header('location:/PHP/GOD');
+            //TODO - Redirect to start page
         }
     }
 
@@ -36,7 +41,6 @@ class UserController extends BaseController {
 
     public function getRoomsAction() {
         //TODO - get all rooms that a user belongs to
-        echo 'GET ALL ROOMS A USER BELONGS TO!';
     }
 
     public function getUserSettingsAction() {

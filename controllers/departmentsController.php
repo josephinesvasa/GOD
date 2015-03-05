@@ -1,10 +1,15 @@
 <?php
+<<<<<<< HEAD
 //test
 class DepartmentsController extends baseController {
+=======
+
+class departmentsController extends baseController {
+>>>>>>> origin/master
 
     public function __construct() {
         if (!$this->checkUserAuth()) {
-            header('location:/PHP/GOD');
+            //TODO - redirect to start page
         }
     }
 

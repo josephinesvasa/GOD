@@ -1,17 +1,21 @@
 <?php
+<<<<<<< HEAD
 //test
 class RoomsController extends BaseController {
+=======
+
+class RoomController extends baseController {
+>>>>>>> origin/master
 
     public function __construct() {
         if (!$this->checkUserAuth()) {
-            header('location:/PHP/GOD');
+            //TODO - redirect to start page
         }
     }
 
 
     public function indexAction() {
         //TODO - view room.php AND get room messages AND room users
-        echo 'View room.php AND get room messages AND room users';
     }
 
     //Create functions
@@ -58,15 +62,15 @@ class RoomsController extends BaseController {
 
     //Get functions
     public function getUsers($room) {
+        $stm = $this->$db->prepare("
+        SELECT f_name, l_name FROM users AS u
+        JOIN rooms_users AS ru ON ru.user_id = u.user_id
+        WHERE ru.room_id = :room");
         //TODO - Get all users in a room if the room is public (get room id from GET)
     }
 
     public function getMessages($room) {
         //TODO - Get all messages that belong to a room (get room id from GET)
-    }
-
-    public function getMessagesAction($room) {
-        //TODO - Get all messages from a room (get room id from GET)
     }
 
 
