@@ -9,17 +9,21 @@
 </head>
 <body>
 
-<div id="container" class="col-md-16">
-    <div id="header" class="col-md-16">
-        <div id="user_container" class="col-md-3">
-            <div id="user_image" class="col-md-6" style="background-image: url('http://burrilldigitalhealth.com/wp-content/uploads/bw_square_profile_picture_1800x1800_medium_res.jpeg');"></div>
-            <div id="user_name" class="col-md-10">Lars Åhli</div>
-        </div>
-        <div id="tabs" class="col-md-7"></div>
-        <div id="menu_bars" class="col-md-2"><i class="fa fa-bars"></i></div>
+<div class="container">
+    <div class="row header">
+        <div class="col-md-1 user_container user_image" style="background-image: url('http://burrilldigitalhealth.com/wp-content/uploads/bw_square_profile_picture_1800x1800_medium_res.jpeg');"></div>
+        <div class="col-md-2">Lars Åhli</div>
+        <div class="col-md-7"></div>
+        <div class="col-md-2 menu_bars"><i class="fa fa-bars"></i></div>
     </div>
-
-
+    <div class="row">
+        <div class="col-*-*"></div>
+        <div class="col-*-*"></div>
+        <div class="col-*-*"></div>
+    </div>
+    <div class="row">
+        ...
+    </div>
 </div>
 
 </body>
