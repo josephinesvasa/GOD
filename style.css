@@ -69,5 +69,5 @@ body {
 }
 
 .text-left {
-    text-align: left!important;
+    width: 100%!important;
 }

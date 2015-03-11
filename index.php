@@ -46,7 +46,7 @@
                 <table class="table">
                     <tr>
                         <td rowspan="2"><img src="http://whysquare.co.nz/wp-content/uploads/2013/07/profile_square3-270x270.jpg" class="user_image_sidebar"></td>
-                        <td class="text-left"><h4>Tjing Wally</h4></td>
+                        <td class="text-left"><h4>Name</h4></td>
                     </tr>
                     <tr>
                         <td class="latest_excerpt text-left">Hej</td>
