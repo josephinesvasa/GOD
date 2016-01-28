@@ -17,4 +17,6 @@ $controller = $router->getController();
 $action = $router->getAction();
 
 $obj = new $controller();
-$obj->$action();;
+$obj->$action();
+
+'just testing some shit';
